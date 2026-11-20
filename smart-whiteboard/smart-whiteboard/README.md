@@ -127,11 +127,4 @@ These numbers come from a synthetic camera; real values depend on your camera, l
 5. Calibrate (automatic on first start; `c` to redo), then run **Tools > Pointer test** and read the mean error.
 6. Replace the placeholder lesson (`assets/lesson/lesson.json`) and images (`assets/images`) with your content.
 
-## GitHub
 
-```bash
-git init && git add . && git commit -m "Smart interactive whiteboard"
-git branch -M main && git remote add origin <URL> && git push -u origin main
-```
-
-`assets/fonts/Inter-*.otf` are under the SIL Open Font License (`Inter-LICENSE.txt`).
