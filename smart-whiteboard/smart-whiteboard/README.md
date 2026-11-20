@@ -115,11 +115,4 @@ SWB_SHOTS=shots python tests/test_app.py     # also saves screenshots of each sc
 ```
 Synthetic-camera result: mean mapping error ≈ 0.8 px on a 1920×1080 board.
 
-## Push to GitHub
-```bash
-cd smart-whiteboard
-git init && git add . && git commit -m "Smart interactive whiteboard"
-git branch -M main
-git remote add origin https://github.com/<user>/<repo>.git
-git push -u origin main
-```
+
