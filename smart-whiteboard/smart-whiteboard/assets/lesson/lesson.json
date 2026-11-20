@@ -1,0 +1,41 @@
+{
+  "title": "How the smart whiteboard works",
+  "pages": [
+    {
+      "type": "text",
+      "title": "A camera turns the wall into a touch screen",
+      "bullets": [
+        "A projector shows the interface on the board",
+        "A fixed camera watches the board",
+        "The red dot of the pointer is the cursor",
+        "The remote buttons are the mouse clicks"
+      ]
+    },
+    {
+      "type": "image",
+      "title": "The processing pipeline",
+      "image": "../images/2_pipeline.png",
+      "caption": "Camera frame -> dot -> board coordinates -> click -> interface"
+    },
+    {
+      "type": "text",
+      "title": "Image coordinates -> board coordinates",
+      "bullets": [
+        "The board is a plane: a 3x3 homography maps pixels to board points",
+        "4 calibration targets give 8 equations: solved with the DLT",
+        "Validation points measure the error in pixels"
+      ]
+    },
+    {
+      "type": "image",
+      "title": "Zoom exercise",
+      "image": "../images/1_landscape.png",
+      "caption": "Use Images > Gallery to zoom and pan this picture"
+    },
+    {
+      "type": "draw",
+      "title": "Your turn",
+      "prompt": "Sketch the path of the light from the projector to the camera"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+numpy>=1.24
+opencv-python>=4.8      # camera capture, window display, image file decoding, text rasterisation
+# optional: global keyboard hook for the remote (remote.backend = "pynput")
+# pynput>=1.7
+# development
+pytest>=7

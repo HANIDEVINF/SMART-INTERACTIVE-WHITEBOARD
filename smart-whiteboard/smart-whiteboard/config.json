@@ -1,0 +1,76 @@
+{
+  "camera": {
+    "index": 0,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "fourcc": "MJPG",
+    "backend": "auto",
+    "flip_horizontal": false,
+    "flip_vertical": false,
+    "exposure": null
+  },
+  "display": {
+    "width": 1920,
+    "height": 1080,
+    "fullscreen": true,
+    "window_x": 0,
+    "window_y": 0,
+    "window_name": "Smart Whiteboard",
+    "show_debug": true
+  },
+  "detection": {
+    "hue_tolerance": 22.0,
+    "sat_min": 0.45,
+    "val_min": 0.75,
+    "downscale": 2,
+    "min_area": 3,
+    "max_area": 900,
+    "denoise_neighbors": 3,
+    "merge_radius": 1,
+    "roi_margin": 0.04,
+    "prior_gate_px": 150.0
+  },
+  "tracking": {
+    "min_cutoff": 1.5,
+    "beta": 0.04,
+    "d_cutoff": 1.0,
+    "max_lost_frames": 8
+  },
+  "remote": {
+    "backend": "opencv",
+    "next_codes": [
+      2228224,
+      65366,
+      2555904,
+      65363,
+      110
+    ],
+    "prev_codes": [
+      2162688,
+      65365,
+      2424832,
+      65361,
+      112
+    ],
+    "next_names": [
+      "page_down",
+      "right",
+      "n"
+    ],
+    "prev_names": [
+      "page_up",
+      "left",
+      "p"
+    ],
+    "debounce_s": 0.15
+  },
+  "calibration": {
+    "file": "calibration.json",
+    "target_margin": 0.06,
+    "validation_points": 3,
+    "ok_error_px": 25.0
+  },
+  "assets_dir": "assets",
+  "show_trail": true
+}
