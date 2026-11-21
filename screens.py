@@ -16,7 +16,7 @@ TOP = 90  # hauteur de la barre superieure
 
 
 def draw_header(canvas, title):
-    fill_gradient(canvas, 0, 0, C.UI_W, TOP, (84, 34, 150), (46, 18, 88))   # velours
+    fill_gradient(canvas, 0, 0, C.UI_W, TOP, C.HEADER_TOP, C.HEADER_BOTTOM)   # velours
     fill_rect(canvas, 0, TOP - 7, C.UI_W, 3, C.GOLD)                          # double filet dore
     fill_rect(canvas, 0, TOP - 2, C.UI_W, 1, C.GOLD_DARK)
     if title:
@@ -72,8 +72,8 @@ class MainMenu(Screen):
                  ("Images", "Display and zoom", "image", lambda: app.push(ImagesScreen(app))),
                  ("Lesson", "Guided slides", "book", lambda: app.push(LessonScreen(app))),
                  ("Settings", "Calibration and reset", "gear", lambda: app.push(SettingsScreen(app)))]
-        bw, bh, gap = 440, 150, 30
-        x0, y0 = (C.UI_W - 2 * bw - gap) // 2, 205
+        bw, bh, gap = 440, 145, 30
+        x0, y0 = (C.UI_W - 2 * bw - gap) // 2, 225
         for i, (lbl, sub, ic, act) in enumerate(items):
             r, c = divmod(i, 2)
             self.buttons.append(Button(lbl, x0 + c * (bw + gap), y0 + r * (bh + gap), bw, bh, act,
@@ -85,8 +85,8 @@ class MainMenu(Screen):
     def render(self, canvas, pointer):
         put_text(canvas, "~ ESTABLISHED 2026 ~", C.UI_W // 2, 48, 0.6, C.GOLD, 1, center=True, font=FONT_SUB)
         put_text(canvas, "Smart Whiteboard", C.UI_W // 2, 100, 2.6, C.GOLD_LIGHT, 3, center=True, shadow=True, font=FONT_TITLE)
-        flourish(canvas, C.UI_W // 2, 138, 250)
-        put_text(canvas, "Point with the marker, then press a remote button", C.UI_W // 2, 172, 0.8,
+        flourish(canvas, C.UI_W // 2, 156, 250)
+        put_text(canvas, "Point with the marker, then press a remote button", C.UI_W // 2, 194, 0.8,
                  C.TEXT, 1, center=True, font=FONT_SUB)
         self.draw_buttons(canvas, pointer)
         pill(canvas, C.UI_W // 2 - 340, 625, 320, 50, C.CLICK_LEFT, "NEXT: left click")
@@ -262,7 +262,7 @@ class LessonScreen(Screen):
         draw_header(canvas, sl["title"])
         n = len(assets.SLIDES)
         fill_rect(canvas, 0, TOP - 7, int(C.UI_W * (self.i + 1) / n), 3, C.GOLD_LIGHT)  # progression
-        fill_rounded(canvas, 50, 125, C.UI_W - 100, 445, 14, (10, 4, 22), 0.55)            # carte de contenu
+        fill_rounded(canvas, 50, 125, C.UI_W - 100, 445, 14, (14, 6, 20), 0.55)            # carte de contenu
         draw_rounded_border(canvas, 50, 125, C.UI_W - 100, 445, 14, C.GOLD, 3)
         draw_rounded_border(canvas, 58, 133, C.UI_W - 116, 429, 10, C.GOLD_DARK, 1)
         for k, line in enumerate(sl["lines"]):
@@ -298,7 +298,7 @@ class SettingsScreen(Screen):
         self.buttons = nav_buttons(app)
         for i, (lbl, ic, act) in enumerate(acts):
             self.buttons.append(Button(lbl, 340, 125 + i * 98, 600, 80, act, icon=ICONS[ic], scale=0.95,
-                                       color=C.CARD_COLORS[0] if lbl == "Quit" else None))
+                                       color=C.DANGER if lbl == "Quit" else None))
 
     def render(self, canvas, pointer):
         draw_header(canvas, "Settings")

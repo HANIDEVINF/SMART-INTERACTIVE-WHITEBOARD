@@ -151,7 +151,10 @@ def draw_frame(img, x, y, w, h):
     draw_border(img, x, y, w, h, C.GOLD, 3)
     draw_border(img, x + 7, y + 7, w - 14, h - 14, C.GOLD_DARK, 1)
     for cx, cy in ((x, y), (x + w, y), (x, y + h), (x + w, y + h)):
-        diamond(img, cx, cy, 11, C.GOLD_LIGHT)
+        draw_ring(img, cx, cy, 52, 49, C.GOLD)            # eventails de coin
+        draw_ring(img, cx, cy, 42, 41, C.GOLD_DARK)
+        draw_ring(img, cx, cy, 32, 30, C.GOLD)
+        diamond(img, cx, cy, 12, C.GOLD_LIGHT)
         diamond(img, cx, cy, 5, C.BG_BOTTOM)
 
 

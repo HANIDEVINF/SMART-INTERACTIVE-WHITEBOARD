@@ -35,22 +35,26 @@ DEFAULT_KEYMAP = {
     "right_names": ["page_up", "left", "up", "p"],
 }
 
-# ---- Palette victorienne (BGR) : velours bordeaux, or, ivoire, acajou. Pas de vert (marqueur !) ----
-BG_TOP = (58, 24, 104)           # bordeaux
-BG_BOTTOM = (28, 10, 52)
+# ---- Palette victorienne "rose & or" (BGR) : vin, aubergine, or antique, creme, rose poudre ----
+# Pas de vert dans l'interface (reserve au marqueur).
+BG_TOP = (46, 22, 74)            # vin
+BG_BOTTOM = (28, 10, 30)         # aubergine
 BG = BG_BOTTOM
-PANEL = (36, 30, 84)             # acajou / velours sombre
-HOVER = (62, 46, 128)
-GOLD = (60, 170, 212)
-GOLD_LIGHT = (130, 215, 245)
-GOLD_DARK = (28, 105, 150)
-IVORY = (205, 235, 245)
+HEADER_TOP, HEADER_BOTTOM = (66, 38, 110), (44, 22, 66)
+PANEL = (48, 28, 66)             # velours acajou
+HOVER = (76, 48, 104)
+GOLD = (90, 172, 212)            # or antique
+GOLD_LIGHT = (150, 221, 245)
+GOLD_DARK = (48, 104, 140)
+IVORY = (216, 238, 248)          # creme
 ACCENT = GOLD
 TEXT = IVORY
-GRAY = (150, 170, 190)           # parchemin pale
+GRAY = (176, 180, 204)           # rose-beige
 POINTER_COLOR = (40, 170, 255)
 CLICK_LEFT = GOLD_LIGHT
-CLICK_RIGHT = (130, 90, 230)     # rose
-CARD_COLORS = [(52, 28, 150), (110, 44, 100), (118, 88, 24), (30, 80, 160)]  # cramoisi, prune, bleu paon, rouille
-PEN_COLORS = [IVORY, GOLD_LIGHT, (130, 90, 230), (230, 150, 180), (230, 200, 120)]  # ivoire, or, rose, lavande, ciel
+CLICK_RIGHT = (170, 140, 232)    # rose
+DANGER = (70, 36, 140)
+# Cartes assorties (tons joyaux adoucis) : rose poudre, mauve, bleu paon, bronze
+CARD_COLORS = [(116, 92, 176), (156, 88, 122), (124, 108, 44), (52, 120, 168)]
+PEN_COLORS = [IVORY, GOLD_LIGHT, (170, 140, 232), (232, 170, 196), (232, 210, 150)]
 PEN_SIZES = [4, 10, 22]
