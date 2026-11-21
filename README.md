@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Smart Interactive Whiteboard (Python + NumPy + OpenCV)
 
 ## Installation
@@ -34,3 +35,7 @@ Mettre des images dans `images/` (sinon 2 images de demo sont generees).
 
 ## Limites a mentionner dans le rapport
 Marqueur confondu avec un objet de meme couleur ; sensibilite a l'eclairage ; pas de correction de distorsion de l'objectif (homographie plane seulement) ; la fenetre OpenCV doit avoir le focus pour recevoir la telecommande (sinon REMOTE_BACKEND = "pynput").
+=======
+# SMART-INTERACTIVE-WHITEBOARD
+Projet vision
+>>>>>>> c3cad67844e5f0911e8d277e38ee9e22da2aa02f
