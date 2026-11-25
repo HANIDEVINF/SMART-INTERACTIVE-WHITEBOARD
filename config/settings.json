@@ -1,0 +1,79 @@
+{
+  "app": {
+    "window_width": 1283,
+    "window_height": 780,
+    "recent_max": 8
+  },
+  "board": {
+    "width": 1600,
+    "height": 900,
+    "paper_color_rgb": [
+      250,
+      249,
+      246
+    ]
+  },
+  "pen": {
+    "tool": "line",
+    "color": "#1f2937",
+    "thickness": 6
+  },
+  "camera": {
+    "index": 0,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "mirror": false,
+    "autostart": true
+  },
+  "detection": {
+    "method": "color_marker",
+    "hsv_low": [
+      35,
+      90,
+      70
+    ],
+    "hsv_high": [
+      85,
+      255,
+      255
+    ],
+    "sample_hsv": [
+      60,
+      200,
+      200
+    ],
+    "sensitivity": 50,
+    "min_area": 150,
+    "max_area": 40000,
+    "kernel_size": 5,
+    "confidence_min": 0.35,
+    "detect_width": 320,
+    "alpha": 0.5,
+    "lost_timeout_ms": 600,
+    "max_jump_pct": 25,
+    "confirm_frames": 2
+  },
+  "pointer": {
+    "visible": true
+  },
+  "interaction": {
+    "mode": "navigation",
+    "dwell_ms": 1200
+  },
+  "remote": {
+    "next_keys": [
+      "Right",
+      "PgDown"
+    ],
+    "previous_keys": [
+      "Left",
+      "PgUp"
+    ],
+    "debounce_ms": 250
+  },
+  "calibration": {
+    "edge_margin_px": 12
+  },
+  "recent": []
+}
