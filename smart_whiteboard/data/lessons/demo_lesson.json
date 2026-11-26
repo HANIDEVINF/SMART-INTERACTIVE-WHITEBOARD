@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "title": "How a camera becomes a pointer",
+  "author": "LuminaBoard demo lesson",
+  "pages": [
+    {
+      "title": "How a camera becomes a pointer",
+      "text": "LuminaBoard turns a wall, a webcam and a coloured marker into an interactive board.\n\n- 5 ideas, 5 pages: pixels, colour, finding the marker, mapping to the board, smoothing\n- Use the Next / Previous controls at the bottom of the board (left click with the remote)\n- Everything written on a page stays there when you come back\n- Press M or right-click for the menu",
+      "image": "",
+      "notes": "Introduce the project goal and show how the page controls work."
+    },
+    {
+      "title": "1. What the camera really gives us",
+      "text": "A picture is a grid of numbers.\n\n- Each pixel stores Blue, Green and Red\n- Each value is 0 to 255\n- A 1280 x 720 frame is 921 600 pixels\n- Everything that follows is arithmetic on this grid",
+      "image": "demo/pixels.png",
+      "notes": "OpenCV stores channels in B, G, R order."
+    },
+    {
+      "title": "2. Colour is easier in HSV",
+      "text": "RGB mixes colour and brightness; HSV separates them.\n\n- H: which colour (0 to 179 in OpenCV)\n- S: how vivid\n- V: how bright\n> keep pixels with H in [h1, h2], S >= s1, V >= v1\n- A marker keeps its hue when the light changes",
+      "image": "demo/hsv.png",
+      "notes": "Red wraps around hue 0, so it needs two ranges."
+    },
+    {
+      "title": "3. Finding the marker",
+      "text": "Threshold, clean, then measure.\n\n- Opening removes specks, closing fills holes\n- Connected components give one blob per object\n- The biggest convincing blob is the marker\n> cx = m10 / m00     cy = m01 / m00",
+      "image": "demo/segmentation.png",
+      "notes": "The centroid is the average position of the white pixels."
+    },
+    {
+      "title": "4. From camera pixels to the board",
+      "text": "The camera sees the board at an angle.\n\n- Click the 4 corners once: this is calibration\n- 4 point pairs give 8 equations for the 8 unknowns of H\n> [x' y' w']^T = H [x y 1]^T ,  board = (x'/w', y'/w')\n- Then every camera pixel has a board position",
+      "image": "demo/homography.png",
+      "notes": "Solved with the DLT algorithm and an SVD."
+    },
+    {
+      "title": "5. Smoothing the pointer",
+      "text": "A raw centroid jitters by a few pixels.\n\n- Blend each new measurement with the previous position\n> p(t) = alpha * m(t) + (1 - alpha) * p(t-1)\n- Small alpha: smooth but slow;  alpha = 1: raw\n- Jumps are checked before they are accepted",
+      "image": "demo/ema.png",
+      "notes": "Exponential moving average."
+    },
+    {
+      "title": "Your turn",
+      "text": "Try the tools on this page.\n\n- Switch to Drawing mode and write your answer here\n- Why does a red marker need two hue ranges?\n- Go back to page 3 with Previous and circle the centroid\n- Come back: your notes are still on the page\n- Menu > Image lets you zoom and pan",
+      "image": "",
+      "notes": "Hue is circular: red is at both ends of the scale."
+    }
+  ]
+}
