@@ -1,0 +1,16 @@
+# LuminaBoard - runtime dependencies (verified to have Windows wheels for Python 3.14)
+#
+# PySide6 and OpenCV ship "abi3" wheels, so they work on every Python 3.x >= 3.10 / 3.7.
+# NumPy and Pillow publish native cp314 wheels.
+PySide6>=6.8
+opencv-python>=4.10,<5
+numpy>=2.1
+Pillow>=11
+
+# OPTIONAL - bare-hand tracking (index fingertip + pinch clicks). Already installed on your laptop.
+# Without it, or without the model file, LuminaBoard uses the built-in colour-marker tracker automatically.
+# NOTE: installing mediapipe may also pull in opencv-contrib-python; having both opencv-python and
+# opencv-contrib-python installed can conflict. If OpenCV errors appear after installing it, run:
+#     pip uninstall -y opencv-python opencv-contrib-python
+#     pip install opencv-contrib-python
+# mediapipe
