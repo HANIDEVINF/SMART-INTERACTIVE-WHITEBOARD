@@ -1,0 +1,100 @@
+{
+  "camera": {
+    "index": 0,
+    "source": "",
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "fourcc": "MJPG",
+    "backend": "auto",
+    "flip_horizontal": false,
+    "flip_vertical": false,
+    "exposure": null
+  },
+  "display": {
+    "width": 1920,
+    "height": 1080,
+    "fullscreen": true,
+    "window_x": 0,
+    "window_y": 0,
+    "window_name": "Smart Whiteboard",
+    "show_debug": true,
+    "ui_transitions": true,
+    "dwell_click": false,
+    "dwell_click_s": 1.3
+  },
+  "detection": {
+    "mode": "red_dot",
+    "skin_cr_min": 135.0,
+    "skin_cr_max": 175.0,
+    "skin_cb_min": 80.0,
+    "skin_cb_max": 128.0,
+    "skin_y_min": 45.0,
+    "hand_downscale": 3,
+    "hand_min_area": 80,
+    "hand_max_frac": 0.25,
+    "tip_radius": 4,
+    "hue_tolerance": 22.0,
+    "sat_min": 0.45,
+    "val_min": 0.75,
+    "downscale": 2,
+    "min_area": 3,
+    "max_area": 900,
+    "denoise_neighbors": 3,
+    "merge_radius": 1,
+    "roi_margin": 0.04,
+    "prior_gate_px": 150.0,
+    "search_window_px": 130,
+    "core_v_min": 0.93,
+    "core_s_max": 0.35
+  },
+  "tracking": {
+    "min_cutoff": 1.5,
+    "beta": 0.15,
+    "d_cutoff": 1.0,
+    "max_lost_frames": 8,
+    "click_lookback_s": 0.1,
+    "click_lookback_max_px": 120.0,
+    "threaded": true
+  },
+  "remote": {
+    "backend": "opencv",
+    "next_codes": [
+      2228224,
+      65366,
+      2555904,
+      65363,
+      110
+    ],
+    "prev_codes": [
+      2162688,
+      65365,
+      2424832,
+      65361,
+      112
+    ],
+    "next_names": [
+      "page_down",
+      "right",
+      "n"
+    ],
+    "prev_names": [
+      "page_up",
+      "left",
+      "p"
+    ],
+    "debounce_s": 0.15
+  },
+  "calibration": {
+    "file": "calibration.json",
+    "target_margin": 0.06,
+    "points": 9,
+    "estimate_distortion": true,
+    "validation_points": 3,
+    "dwell_s": 1.2,
+    "dwell_px": 6.0,
+    "ok_error_px": 25.0
+  },
+  "assets_dir": "assets",
+  "show_trail": true
+}

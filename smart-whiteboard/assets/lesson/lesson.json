@@ -1,0 +1,56 @@
+{
+  "title": "How the smart whiteboard works",
+  "pages": [
+    {
+      "type": "text",
+      "title": "A camera turns the wall into a touch screen",
+      "bullets": [
+        "A projector shows the interface on the board",
+        "A fixed camera watches the board",
+        "The red dot of the pointer is the cursor",
+        "The remote buttons are the mouse clicks"
+      ]
+    },
+    {
+      "type": "image",
+      "title": "The processing pipeline",
+      "image": "../images/2_pipeline.png",
+      "caption": "Camera frame -> dot -> board coordinates -> click -> interface"
+    },
+    {
+      "type": "text",
+      "title": "Image coordinates -> board coordinates",
+      "bullets": [
+        "The board is a plane: a 3x3 homography maps pixels to board points",
+        "9 calibration targets give 18 equations, solved with the DLT",
+        "A lens-distortion term k1 removes the barrel effect of wide cameras",
+        "Validation points measure the error in pixels"
+      ]
+    },
+    {
+      "type": "quiz",
+      "title": "Quick check",
+      "question": "Which transformation maps camera pixels to board pixels?",
+      "options": ["A rotation only", "A planar homography", "A Fourier transform"],
+      "answer": 1
+    },
+    {
+      "type": "image",
+      "title": "Zoom exercise",
+      "image": "../images/1_landscape.png",
+      "caption": "Use Images > Gallery to zoom and pan this picture"
+    },
+    {
+      "type": "quiz",
+      "title": "Quick check",
+      "question": "Why does the interface never use the colour red?",
+      "options": ["Red is hard to read", "The projector would create false red dots", "Red uses more power"],
+      "answer": 1
+    },
+    {
+      "type": "draw",
+      "title": "Your turn",
+      "prompt": "Sketch the path of the light from the projector to the camera"
+    }
+  ]
+}
